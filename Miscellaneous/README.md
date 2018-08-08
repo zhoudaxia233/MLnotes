@@ -6,6 +6,8 @@
 
    > SGD的思想核心其实是，**每次只采取一小部分输入数据的计算结果来更新梯度**，而BGD则是采取全部的输入数据。
 
+   > 当我们只谈及SGD和BGD时，我们说的SGD其实是一个广义的概念，如果狭义地说，这个SGD其实还要分成真·SGD (即batch size为1) 和 mini-batch (即batch size介于1和全部输入数据的个数之间)
+
    > SGD以及RMSprop，Adam，都是采用了“**只采取一小部分输入数据来更新梯度**”这个思想研发出来的算法。只不过SGD是Naive版本，而RMSprop和Adam则是Advanced版本。
 
 2. 问：
