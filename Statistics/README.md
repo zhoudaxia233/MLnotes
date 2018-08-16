@@ -7,13 +7,13 @@
     > A residual is the difference between the observed value and the mean value that the model predicts for that observation.
 
 线性回归，线性指的是关于**系数**是线性的，至于自变量的幂是无所谓的，二次也好三次也罢；非线性回归和线性回归都是可以拟合曲线的。  
-一般来说，先试一下线性回归，*如果观察到了明显的bias*，即便R^2接近1也不要用，换一下非线性试试。  
+一般来说，先试一下线性回归，*如果观察到了明显的bias*，即便R<sup>2</sup>接近1也不要用，换一下非线性试试。  
 
 **如何观察到明显的bias**?   
 
-我们可以利用残差图(residual plots)，如果观察到明显的非随机的pattern，那就说明有bias。要注意，R^2不适用于非线性回归问题。
+我们可以利用残差图(residual plots)，如果观察到明显的非随机的pattern，那就说明有bias。要注意，R<sup>2</sup>不适用于非线性回归问题。
 
-R^2之所以不适用于非线性回归问题，是因为：在线性回归模型中，Explained variance + Error variance = Total variance，R^2就是基于这个等式假设得出的公式。而在非线性回归模型中，Explained variance + Error variance != Total variance，因此便不能使用R^2。
+R<sup>2</sup>之所以不适用于非线性回归问题，是因为：在线性回归模型中，Explained variance + Error variance = Total variance，R<sup>2</sup>就是基于这个等式假设得出的公式。而在非线性回归模型中，Explained variance + Error variance != Total variance，因此便不能使用R<sup>2</sup>。
 
 Residual plots are important. If you observe a pattern in the residual plots, it means you need to adjust your model.
 
