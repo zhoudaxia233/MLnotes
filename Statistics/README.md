@@ -1,3 +1,13 @@
+## Data Preprocessing
+
+1. Data normalization is very important.
+   > 不同的属性(对应于表格中的“列”)具有不同范围的变化尺度，例如年龄和收入，年龄的区间从0到100，而收入的区间则可以从0到1000000，后者是前者的10000倍。如果在进行数据分析之前不进行normalization的话，那么“收入”这个变量对最终结果的影响能力就会远远大于“年龄”。为了消除每个属性由于自身变化范围的不同而对最终结果造成的不良影响，我们就需要进行Data normalization。
+2. Three methods of data normalization:
+   > Simple Feature Scaling: x<sub>new</sub> = x<sub>old</sub> / x<sub>max</sub>  
+   > Min-Max: x<sub>new</sub> = (x<sub>old</sub> - x<sub>min</sub>) / (x<sub>max</sub> - x<sub>min</sub>)  
+   > Z-score: x<sub>new</sub> = (x<sub>old</sub> - &mu;) / &sigma;
+
+
 ## Regression
 
 1. What is **unbiased model**?
