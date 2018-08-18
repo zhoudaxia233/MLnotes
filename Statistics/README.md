@@ -6,6 +6,7 @@
    > Simple Feature Scaling: x<sub>new</sub> = x<sub>old</sub> / x<sub>max</sub>  
    > Min-Max: x<sub>new</sub> = (x<sub>old</sub> - x<sub>min</sub>) / (x<sub>max</sub> - x<sub>min</sub>)  
    > Z-score: x<sub>new</sub> = (x<sub>old</sub> - &mu;) / &sigma;
+   >> 当我们在度量两个变量的相关性的时候，会遇到一个概念叫“皮尔逊相关度(Pearson Correlation Coefficient)”。在我们使用皮尔逊相关度来度量两个变量的相关性的时候，并不需要事先进行Data normalization处理，因为皮尔逊相关度的计算方法中已经包含了这样的处理，具体来说，包含了Z-score这种方式，使得处理后的数据服从标准正态分布。
 
 
 ## Regression
