@@ -64,3 +64,25 @@ R<sup>2</sup>之所以不适用于非线性回归问题，是因为：在线性�
 Residual plots are important. If you observe a pattern in the residual plots, it means you need to adjust your model.
 
 Residual plots ([详细请查看](http://statisticsbyjim.com/regression/check-residual-plots-regression-analysis/)): x轴是fitted value，也就是模型预测的值，y轴是residual value，也就是对应的残差。一个良好的model，其residual plot应该无规律地分布在0的附近。
+
+**如何可视化一个多元的线性回归模型**?   
+
+也就是说，如果我们的输入变量有两个或两个以上的维度，如何将该模型可视化？  
+我们可以利用**distribution plot**。也就是在同一个图中，分别画出实际值的分布曲线和预测值的分布曲线。  
+例如，我们要预测不同指标(e.g. horsepower, color, engine-size)对于汽车售价的影响，为了将我们的模型可视化从而更好地理解，就可以有如下代码：  
+```
+import seaborn as sns
+
+Z = df[['horsepower', 'color', 'engine-size']]
+Y_hat = our_model.predict(Z)
+
+sns.distplot(df['price'], hist=False, color="r", label="Actual Value")
+sns.distplot(Yhat, hist=False, color="b", label="Fitted Values")
+
+plt.title('Actual vs Fitted Values for Price')
+plt.xlabel('Price (in dollars)')
+plt.ylabel('Proportion of Cars')
+
+plt.show()
+plt.close()
+```
