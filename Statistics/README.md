@@ -7,6 +7,8 @@
    > Min-Max: x<sub>new</sub> = (x<sub>old</sub> - x<sub>min</sub>) / (x<sub>max</sub> - x<sub>min</sub>)  
    > Z-score: x<sub>new</sub> = (x<sub>old</sub> - &mu;) / &sigma;
    >> 当我们在度量两个变量的相关性的时候，会遇到一个概念叫“皮尔逊相关度(Pearson Correlation Coefficient)”。在我们使用皮尔逊相关度来度量两个变量的相关性的时候，并不需要事先进行Data normalization处理，因为皮尔逊相关度的计算方法中已经包含了这样的处理，具体来说，包含了Z-score这种方式，使得处理后的数据服从标准正态分布。
+   
+   > 当然我们也可以直接调用sklearn库中的scale方法: `sklearn.preprocessing.scale()`
 
 针对于**线性回归问题**：  
 数据预处理的过程中，有一个很重要的问题，“到底数据集中的哪些属性对于我们预测target的值是更加重要，更有影响的？”  
@@ -68,7 +70,7 @@ Residual plots ([详细请查看](http://statisticsbyjim.com/regression/check-re
 **如何可视化一个多元的线性回归模型**?   
 
 也就是说，如果我们的输入变量有两个或两个以上的维度，如何将该模型可视化？  
-我们可以利用**distribution plot**。也就是在同一个图中，分别画出(*要预测的target的*)实际值的分布曲线和预测值的分布曲线。  
+我们可以利用**distribution plot**。也就是在同一个图中，分别画出 (*要预测的target的*) 实际值的分布曲线和预测值的分布曲线。  
 例如，我们要预测不同指标(e.g. horsepower, color, engine-size)对于汽车售价的影响，为了将我们的模型可视化从而更好地理解，就可以有如下代码：  
 ```
 import seaborn as sns
