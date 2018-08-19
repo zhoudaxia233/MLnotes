@@ -68,7 +68,7 @@ Residual plots ([详细请查看](http://statisticsbyjim.com/regression/check-re
 **如何可视化一个多元的线性回归模型**?   
 
 也就是说，如果我们的输入变量有两个或两个以上的维度，如何将该模型可视化？  
-我们可以利用**distribution plot**。也就是在同一个图中，分别画出实际值的分布曲线和预测值的分布曲线。  
+我们可以利用**distribution plot**。也就是在同一个图中，分别画出(*要预测的target的*)实际值的分布曲线和预测值的分布曲线。  
 例如，我们要预测不同指标(e.g. horsepower, color, engine-size)对于汽车售价的影响，为了将我们的模型可视化从而更好地理解，就可以有如下代码：  
 ```
 import seaborn as sns
