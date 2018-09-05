@@ -34,3 +34,10 @@
    > 应该在划分训练集和测试集**之后**来进行，也就是说，我们需要先划分好训练集，测试集，然后再进行data normalization操作。  
    > 我们之所以要有测试集，其实就是为了模拟日后在使用这个模型时要用到的真实数据。那么，如果我们在划分之前就进行了normalization，就相当于包含了“未来”的信息 (因为我们既用到了训练数据，又用到了真实数据，而真实数据在没有输入模型之前我们是无法获知的)，从而这个模型也就没有了说服力。  
    > 进一步解释一下什么叫**包含了未来的信息呢**：当我们实际使用一个模型的时候，我们对于即将要处理的数据是一无所知的，而如果我们选择先normalization再划分数据集的话，我们进行normalization操作所用到的均值和方差实际上是包含了测试集，训练集这个整体的均值和方差。在我们实际使用的时候，只有训练好的模型，也就是说我们只有训练集的均值和方差，而我们并不知道系统将会用于处理哪些数据，因此，我们就无法提前得知数据整体的均值和方差。所以，要谨记，先划分数据集，再进行normalization操作。
+
+5. 问：
+   data normalization (aka. feature normalization, feature scaling)应该只应用于input，还是应该应用在input以及output上？
+
+   答：
+   > 应该只应用在input上。具体讨论见：[click me](https://stats.stackexchange.com/questions/111467/is-it-necessary-to-scale-the-target-value-in-addition-to-scaling-features-for-re)
+   
