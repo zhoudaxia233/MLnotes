@@ -4,4 +4,4 @@
 
 **Watershed Transformation applied in image segmentation**:  
 
-1. [Image segmentation and mathematical morphology](http://www.cmm.mines-paristech.fr/~beucher/wtshed.html)
+1. [Image Segmentation with Watershed Algorithm](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_watershed/py_watershed.html)
