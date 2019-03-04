@@ -7,3 +7,5 @@
 [讨论1](https://www.reddit.com/r/MachineLearning/comments/3ne2p7/crossentropy_vs_mean_square_error/)
 [讨论2](https://jamesmccaffrey.wordpress.com/2013/11/05/why-you-should-use-cross-entropy-error-instead-of-classification-error-or-mean-squared-error-for-neural-network-classifier-training/)  
 我的想法是，分类问题输出的是categorical data，而回归问题输出的是continuous data。离散型输出和连续型输出对问题的assumption不一样，这个assumption是包含了一定的先验知识的。而`cross-entropy`就是利用了这种assumption来达到更好的效果。
+4. 是否可以通过增大卷积操作的stride，来避免使用`pooling`操作？  
+是的。可以看这篇paper: [Striving for Simplicity: The All Convolutional Net](https://arxiv.org/abs/1412.6806)  
