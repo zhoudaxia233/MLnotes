@@ -9,3 +9,6 @@
 我的想法是，分类问题输出的是categorical data，而回归问题输出的是continuous data。离散型输出和连续型输出对问题的assumption不一样，这个assumption是包含了一定的先验知识的。而`cross-entropy`就是利用了这种assumption来达到更好的效果。
 4. 是否可以通过增大卷积操作的stride，来避免使用`pooling`操作？  
 是的。可以看这篇paper: [Striving for Simplicity: The All Convolutional Net](https://arxiv.org/abs/1412.6806)  
+5. 在使用`transposed convolution`进行upsampling的时候，往往会出现"Checkerboard Artifacts"，这是为什么呢？如何尽量避免这种现象？  
+我们先说如何尽量避免，在设置transposed convolution layer的时候，一定要选择一个可以被stride整除的kernel size；或者说，只要`kernel size` % `stride` == 0即可。不过即使这样，也还是有可能存在artifacts。于是还有另一种方法，就是先利用Nearest-Neighbor Interpolation对图片进行resize，然后接一个卷积操作 (我们把这种先resize再卷积的组合操作称为`resize-convolution`)，来达到同样的目的，而且完全不会有artifacts。这样做，仅从减少artifacts的角度来说，`resize-convolution`完胜`transposed convolution`。  
+至于为什么会出现这种现象，这里有一个很好的博客，还是可交互式的： [Deconvolution and Checkerboard Artifacts](https://distill.pub/2016/deconv-checkerboard/)  
